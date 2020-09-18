@@ -1,0 +1,40 @@
+/* ubuntu-condensed-regular - latin */
+@font-face {
+  font-family: 'Ubuntu Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'),
+       url('/font/ubuntu-condensed-v9-latin-regular.woff') format('woff'),
+       url('/font/ubuntu-condensed-v9-latin-regular.ttf') format('truetype');
+}
+
+html {
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  background-color: #000;
+  font-size: 16px;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto 1fr auto;
+  grid-template-areas: "header" "nav" "main" "footer";
+  padding: .5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+  font-weight: normal;
+}
