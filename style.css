@@ -54,14 +54,23 @@ h1, h2, h3, h4, h5, h6 {
 
 #nav__container {
   grid-area: nav;
+  padding: .5em 0 0;
 }
 
 #main__container {
   grid-area: main;
+  padding: .5em 0 0;
 }
 
 #footer {
   grid-area: footer;
+  font-size: 2.5em;
+  width: 100%;
+  padding-top: .225em;
+  display: grid;
+  grid-template-rows: 1em;
+  grid-template-columns: .8em 1fr .8em;
+  grid-column-gap: .2em;
 }
 
 /* bars */
@@ -81,6 +90,10 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   background-color: #99f;
   border-radius: 0 1em 1em 0;
+}
+
+.bar__sep {
+  display: none;
 }
 
 /* header */
@@ -127,4 +140,10 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   color: #f90;
   font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+/* footer */
+
+.footer__sep {
+  border-bottom-right-radius: 2em;
 }
