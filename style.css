@@ -38,3 +38,19 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1em;
   font-weight: normal;
 }
+
+#header {
+  grid-area: header;
+}
+
+#nav__container {
+  grid-area: nav;
+}
+
+#main__container {
+  grid-area: main;
+}
+
+#footer {
+  grid-area: footer;
+}
