@@ -41,6 +41,15 @@ h1, h2, h3, h4, h5, h6 {
 
 #header {
   grid-area: header;
+  font-size: 2.5em;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1em auto;
+  grid-template-columns: .8em 1fr .8em;
+  grid-template-areas:
+    "hleft hspace hright"
+    ". hlogo .";
+  grid-gap: .2em;
 }
 
 #nav__container {
@@ -53,4 +62,69 @@ h1, h2, h3, h4, h5, h6 {
 
 #footer {
   grid-area: footer;
+}
+
+/* bars */
+
+.bar--left {
+  display: block;
+  background-color: #99f;
+  border-radius: 1em 0 0 1em;
+}
+
+.bar--space {
+  display: block;
+  background-color: #c9c;
+}
+
+.bar--right {
+  display: block;
+  background-color: #99f;
+  border-radius: 0 1em 1em 0;
+}
+
+/* header */
+
+.header__header {
+  height: 100%;
+  text-align: center;
+  line-height: 1;
+}
+
+.header--left {
+  grid-area: hleft;
+}
+
+.header__logo {
+  grid-area: hlogo;
+}
+
+.header--space {
+  grid-area: hspace;
+}
+
+.header__sep {
+  grid-area: hsep;
+  border-top-right-radius: 2em;
+}
+
+.header--right {
+  grid-area: hright;
+}
+
+.header__name--short {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.header__name--long {
+  display: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #f90;
+  font-family: 'Ubuntu Condensed', sans-serif;
 }
