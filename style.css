@@ -30,7 +30,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto 1fr auto;
-  grid-template-areas: "header" "nav" "main" "footer";
+  grid-template-areas: "header" "nav" "nav-main-sep" "main" "footer";
   padding: .5em;
 }
 
@@ -140,6 +140,30 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   color: #f90;
   font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+/* main-nav separator */
+
+.bar__main-nav-separator {
+  grid-area: nav-main-sep;
+  display: grid;
+  grid-template-columns: .7em 1fr .7em;
+  grid-template-rows: 1em;
+  grid-gap: .5em;
+  grid-template-areas: "mleft mspace mright";
+  padding: .5em 0 0;
+}
+
+.bar__main-nav--left {
+  grid-area: mleft;
+}
+
+.bar__main-nav--space {
+  grid-area: mspace;
+}
+
+.bar__main-nav--right {
+  grid-area: mright;
 }
 
 /* footer */
