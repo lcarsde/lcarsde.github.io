@@ -78,6 +78,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-rows: 1em;
   grid-template-columns: .8em 1fr .8em;
   grid-column-gap: .2em;
+  grid-template-areas: "fleft fspace fright"
 }
 
 /* bars */
@@ -207,10 +208,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* footer */
 
-.footer--sep {
-  border-bottom-right-radius: 2em;
+.footer--left {
+  grid-area: fleft;
 }
 
+.footer--space {
+  grid-area: fspace;
+}
+
+.footer--sep {
+  grid-area: fsep;
+  border-bottom-left-radius: 2em;
+}
+
+.footer--right {
+  grid-area: fright;
+}
 
 /******************************
  * small layout
@@ -223,10 +236,6 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-rows: 1em;
     grid-template-columns: .8em auto 1fr .8em;
     grid-template-areas: "hleft hlogo hspace hright";
-  }
-
-  .header--sep {
-    height: 1em;
   }
 
   .header__name--short {
@@ -254,6 +263,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .bar--sep {
     display: block;
+  }
+
+  .bar--left {
+    display: none;
   }
 
   /* header */
@@ -296,5 +309,35 @@ h1, h2, h3, h4, h5, h6 {
 
   .bar__main-nav-separator {
     display: none;
+  }
+
+  /* footer */
+
+  #footer {
+    grid-template-columns: 8em 1fr .8em;
+    grid-template-areas: "fsep fspace fright"
+  }
+
+  .footer--sep::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: calc(var(--side-bar-width) - .25em);
+    top: -.25em;
+    width: .25em;
+    height: .25em;
+    background-color: #000;
+    border-bottom-left-radius: 100%;
+  }
+
+  .footer--sep::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -.25em;
+    height: .25em;
+    width: var(--side-bar-width);
+    background-color: #c9c;
   }
 }
