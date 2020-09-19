@@ -36,6 +36,8 @@ body {
   grid-template-rows: auto auto auto 1fr auto;
   grid-template-areas: "header" "nav" "nav-main-sep" "main" "footer";
   padding: .5em;
+
+  --side-bar-width: 5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -91,14 +93,16 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #c9c;
 }
 
+.bar--sep {
+  display: none;
+  position: relative;
+  background-color: #c9c;
+}
+
 .bar--right {
   display: block;
   background-color: #99f;
   border-radius: 0 1em 1em 0;
-}
-
-.bar__sep {
-  display: none;
 }
 
 /* header */
@@ -121,9 +125,9 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: hspace;
 }
 
-.header__sep {
+.header--sep {
   grid-area: hsep;
-  border-top-right-radius: 2em;
+  border-top-left-radius: 2em;
 }
 
 .header--right {
@@ -203,7 +207,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* footer */
 
-.footer__sep {
+.footer--sep {
   border-bottom-right-radius: 2em;
 }
 
@@ -221,6 +225,10 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-areas: "hleft hlogo hspace hright";
   }
 
+  .header--sep {
+    height: 1em;
+  }
+
   .header__name--short {
     width: unset;
     height: 1em;
@@ -228,11 +236,65 @@ h1, h2, h3, h4, h5, h6 {
 
   /* navigation */
 
-  #nav__container {
-    margin: .5em 0 0;
-  }
-
   .nav__list {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/******************************
+ * medium layout
+ ******************************/
+
+@media screen and (min-width: 50em) {
+  /* general bars */
+
+  .bar--space {
+    background-color: #99f;
+  }
+
+  .bar--sep {
+    display: block;
+  }
+
+  /* header */
+
+  #header {
+    grid-template-rows: 1em .25em;
+    grid-template-columns: 7em 1fr auto .8em;
+    grid-template-areas: "hsep hspace hlogo hright";
+    grid-row-gap: 0;
+  }
+
+  .header--sep {
+    height: 1em;
+  }
+
+  .header--sep::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: calc(var(--side-bar-width) - .25em);
+    top: 1em;
+    width: .25em;
+    height: .25em;
+    background-color: #000;
+    border-top-left-radius: 100%;
+  }
+
+  .header--sep::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 1em;
+    height: .25em;
+    width: var(--side-bar-width);
+    background-color: #c9c;
+  }
+
+  /* main-nav separator */
+
+  .bar__main-nav-separator {
+    display: none;
   }
 }
