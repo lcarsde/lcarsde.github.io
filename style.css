@@ -8,6 +8,10 @@
        url('/font/ubuntu-condensed-v9-latin-regular.ttf') format('truetype');
 }
 
+/******************************
+ * tiny layout
+ ******************************/
+
 html {
   height: 100%;
 }
@@ -54,12 +58,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #nav__container {
   grid-area: nav;
-  padding: .5em 0 0;
+  padding: .5em 2.55em 0;
 }
 
 #main__container {
   grid-area: main;
-  padding: .5em 0 0;
+  padding: .5em 2.55em 0;
+  color: #ddd;
 }
 
 #footer {
@@ -140,6 +145,36 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   color: #f90;
   font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+/* navigation */
+
+.nav__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: .4em;
+  list-style-type: none;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 1.3em;
+}
+
+.nav__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  min-height: 48px;
+  height: 2.3em;
+  background-color: #f96;
+  border-radius: 2.3em;
+  color: #000;
+  text-decoration: none;
+  padding: .3em 1.1em;
+}
+
+.nav__link:focus,
+.nav__link:hover {
+  background-color: #c9c;
+  text-decoration: underline;
 }
 
 /* main-nav separator */
