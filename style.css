@@ -392,6 +392,12 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 
+  /* main */
+
+  #main__container {
+    padding: .5em 2.55em 0 7em;
+  }
+
   /* footer */
 
   #footer {
