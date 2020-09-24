@@ -226,6 +226,20 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: fright;
 }
 
+/* content */
+#main__container h1,
+#main__container h2,
+#main__container h3,
+#main__container h4 {
+  color: #f90;
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+#main__container h1 {
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
 /******************************
  * small layout
  ******************************/
