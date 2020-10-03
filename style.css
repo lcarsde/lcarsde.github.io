@@ -7,6 +7,14 @@
        url('/font/ubuntu-condensed-v9-latin-regular.woff') format('woff'),
        url('/font/ubuntu-condensed-v9-latin-regular.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'TrekMonitor';
+  font-style: normal;
+  font-weight: 400;
+  src: local('TrekMonitor'), local('TrekMonitor'),
+       url('/font/TrekMonitor.woff') format('woff'),
+       url('/font/TrekMonitor.ttf') format('truetype');
+}
 
 /******************************
  * tiny layout
@@ -149,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__link {
   text-decoration: none;
   color: #f90;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'TrekMonitor', sans-serif;
 }
 
 /* navigation */
@@ -159,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 1fr;
   grid-gap: .5em;
   list-style-type: none;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'TrekMonitor', sans-serif;
 }
 
 .nav__link {
@@ -232,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
 #main__container h3,
 #main__container h4 {
   color: #f90;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'TrekMonitor', sans-serif;
 }
 
 #main__container h1 {
