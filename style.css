@@ -1,3 +1,12 @@
+/* ubuntu-condensed-regular - latin */
+@font-face {
+  font-family: 'Ubuntu Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'),
+       url('/font/ubuntu-condensed-v9-latin-regular.woff') format('woff'),
+       url('/font/ubuntu-condensed-v9-latin-regular.ttf') format('truetype');
+}
 @font-face {
   font-family: 'TrekMonitor';
   font-style: normal;
@@ -148,8 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__link {
   text-decoration: none;
   color: #f90;
-  font-family: 'TrekMonitor';
-  letter-spacing: .03em;
+  font-family: 'TrekMonitor', sans-serif;
 }
 
 /* navigation */
@@ -159,8 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 1fr;
   grid-gap: .5em;
   list-style-type: none;
-  font-family: 'TrekMonitor';
-  letter-spacing: .03em;
+  font-family: 'TrekMonitor', sans-serif;
 }
 
 .nav__link {
@@ -169,13 +176,13 @@ h1, h2, h3, h4, h5, h6 {
   align-items: flex-end;
   position: relative;
   min-height: 48px;
-  height: 2.0em;
-  font-size: 1.4em;
+  height: 2.3em;
+  font-size: 1.25em;
   background-color: #f96;
   border-radius: 2.3em;
   color: #000;
   text-decoration: none;
-  padding: .2em 1.3em;
+  padding: .3em 1.1em;
 }
 
 .nav__link:focus,
@@ -234,7 +241,6 @@ h1, h2, h3, h4, h5, h6 {
 #main__container h4 {
   color: #f90;
   font-family: 'TrekMonitor', sans-serif;
-  letter-spacing: .03em;
 }
 
 #main__container h1 {
@@ -365,7 +371,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: flex-end;
     border-radius: 0;
     background-color: #99f;
-    padding-right: .3em;
+    padding-right: .5em;
   }
 
   .nav__link::before {
@@ -375,6 +381,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     position: absolute;
     font-size: 2.8em;
+    font-weight: 500;
     color: #c69;
     background-color: none;
     height: 100%;
@@ -393,7 +400,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 48px;
     width: 1.6em;
     top: 0;
-    left: calc(100% + 2.0em);
+    left: calc(100% + 2.8em);
     border-radius: 0 1.6em 1.6em 0;
   }
 
