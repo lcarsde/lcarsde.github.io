@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: main;
   padding: .5em 2.55em 0;
   color: #ddd;
+  max-width: 65em;
 }
 
 #footer {
@@ -233,11 +234,39 @@ h1, h2, h3, h4, h5, h6 {
 #main__container h4 {
   color: #f90;
   font-family: 'Ubuntu Condensed', sans-serif;
+  margin: .1em 0 .3em;
 }
 
 #main__container h1 {
   font-size: 2.2em;
   font-weight: 600;
+}
+
+#main__container h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+#main__container p {
+  margin: 0 0 .6em;
+}
+
+.news__header {
+  margin: 0 0 .3em;
+  text-align: right;
+}
+
+.news__header time {
+  font-size: .9em;
+  color: #fc9;
+}
+
+#main__container :first-child {
+  margin-top: 0;
+}
+
+#main__container :last-child {
+  margin-bottom: 0;
 }
 
 /******************************
