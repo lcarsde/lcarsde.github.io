@@ -261,6 +261,17 @@ h1, h2, h3, h4, h5, h6 {
   color: #fc9;
 }
 
+#main__container a {
+  font-style: italic;
+  color: #f96;
+  text-decoration: none;
+}
+
+#main__container a:focus,
+#main__container a:hover {
+  text-decoration: underline;
+}
+
 #main__container :first-child {
   margin-top: 0;
 }
