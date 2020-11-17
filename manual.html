@@ -57,7 +57,19 @@
     </section>
     <section id="lcarswm">
       <h2>LCARS Window Manager</h2>
-      <p>coming soon ...</p>
+      <p>The window manager lcarswm takes care of managing the windows. That is, it manages the windows showing and hiding and drawing its frame with the title bar below the window. It also handles actions to move windows from screen to screen and changing their size in the different screen modes. It also draws the basic frame, which is shown without any windows in the following image.</p>
+      <img src="images/lcarswm.png" alt="Screenshot of lcarswm">
+      <p>What are the basic things, that can be done with the window manager? There are some default key bindings as well as a configuration that can be adjusted to your needs. First, these are the default key bindings:</p>
+      <ul>
+        <li>Win+Q: close the window manager</li>
+        <li>Win+M: toggle display mode between normal, maximized and fullscreen</li>
+        <li>Alt+Tab: toggle through the windows</li>
+        <li>Alt+Win+Up/Down: move the focused window to another monitor</li>
+        <li>Alt+F4: close the focused window</li>
+      </ul>
+      <p>There are a view more key bindings that will open programs, but those are probably what needs to be adjusted, which brings us to the configuration files. There are two configuration files for lcarswm located in <strong>/etc/lcarsde</strong>: settings.xml and autostart. Don't edit the files in this directory! Instead, if they need adjustment, copy them to <strong>~/.config/lcarsde</strong> and adjust them there.</p>
+      <p><strong>autostart</strong> contains commands to be run when the window manager starts. This includes for instance the status bar and the menu, which are separate applications. Make sure that each command is in a new line.</p>
+      <p><strong>settings.xml</strong> contains key bindings for window manager actions and command executions. Especially the executions may be something to change and/or extend. Check the file for examples. Possible modifier keys are: Shift, Ctrl, Alt, Win/Lin/Super, Meta, Hyper. Below the key bindings, there are some general settings, which are the title, that is shown in the top frame part and the font that is used by the window manager. It is possible to set a title image, which overrides the title. The image has to be an xpm file with a height of 40 pixels and it should be smaller then the space for the top blue bar.</p>
       <p><a href="#index">Back to index</a></p>
     </section>
     <section id="app_menu">
