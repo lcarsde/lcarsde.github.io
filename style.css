@@ -253,12 +253,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main__container p {
-  margin: 0 0 .6em;
+  margin: 0 0 .7em;
+  line-height: 1.4em;
 }
 
 #main__container ul {
-  margin: 0 0 .6em;
+  margin: 0 0 .7em;
   padding-left: 1.5em;
+  line-height: 1.4em;
 }
 
 .news__header {
@@ -275,6 +277,12 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
   color: #f96;
   text-decoration: none;
+}
+
+#main__container img {
+  display: block;
+  max-width: 90%;
+  margin: 0 auto 0.7em;
 }
 
 #main__container a:focus,
