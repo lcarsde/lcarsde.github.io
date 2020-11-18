@@ -37,9 +37,9 @@
   </div>
   <main id="main__container">
     <h1>Installation</h1>
-    <p>
-      Note: lcarsde does not bring its own display manager. If one is required (e.g. a login screen is needed but not yet there) than install a display manager like GDM or SDDM additionally to lcarsde.
+    <p><b>Note</b>: lcarsde does not bring its own display manager. If one is required (e.g. a login screen is needed but not yet there) than install a display manager like GDM or SDDM additionally to lcarsde.
     </p>
+    <p><b>Note</b>: lcarswm uses the Kotlin compiler to build, which uses the clang compiler. clang needs an outdated library, libtinfo.so.5. There is usually some compatibility libraries to get it like ncurses5-compat-libs in Arch Linux's AUR. From checking the internet, it seems the most popular (and also working) solution to link to the new version libtinfo.so.6, which can be done like this: <strong>sudo ln -s /usr/lib/libtinfo.so.6 /usr/lib/libtinfo.so.5</strong></p>
     <section>
       <h2>From repository</h2>
       <h3>Arch Linux</h3>
@@ -55,7 +55,7 @@
         <li>logout: <a href="https://github.com/lcarsde/logout" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/logout</a></li>
       </ul>
       <p>Secondly, unpack the release packages.</p>
-      <p>Thirdly and finally, execute the <strong>install.sh</strong> script of each program.</p>
+      <p>Thirdly and finally, execute the install.sh script of each program.</p>
       <p><b>Note</b>: at the beginning of each installation, the dependencies are printed in the console. Please make sure those dependencies are installed as well.</p>
     </section>
   </main>
