@@ -344,9 +344,9 @@ strong {
     flex-direction: row;
     justify-content: space-between;
   }
-  
+
   .news__header--time {
-    align-self: flex-start;
+    align-self: center;
   }
 }
 
