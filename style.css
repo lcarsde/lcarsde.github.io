@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 #main__container {
   grid-area: main;
   padding: .5em 2.55em 0;
-  color: #ddd;
+  color: #99c;
   max-width: 65em;
 }
 
@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #main__container h3 {
   font-size: 1.5em;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 #main__container p {
@@ -265,10 +265,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .news__header {
   margin: 0 0 .3em;
-  text-align: right;
+  display: flex;
+  flex-direction: column;
 }
 
-.news__header time {
+.news__header--title {
+  display: inline-block;
+  flex-grow: 1;
+}
+
+.news__header--time {
+  align-self: flex-end;
+  flex-shrink: 0;
   font-size: .9em;
   color: #fc9;
 }
@@ -298,6 +306,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 
+strong {
+  color: #c66;
+}
+
+.note {
+  color: #f96;
+}
+
 /******************************
  * small layout
  ******************************/
@@ -320,6 +336,17 @@ h1, h2, h3, h4, h5, h6 {
 
   .nav__list {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* content */
+
+  .news__header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .news__header--time {
+    align-self: flex-start;
   }
 }
 
