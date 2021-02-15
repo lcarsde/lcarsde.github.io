@@ -124,6 +124,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .header__logo {
   grid-area: hlogo;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0.08em;
 }
 
 .header--space {
@@ -152,6 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   color: #f90;
   font-family: 'LCARSGTJ3', 'sans-serif';
+  font-size: 1.36em;
 }
 
 /* navigation */
