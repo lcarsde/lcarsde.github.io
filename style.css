@@ -7,6 +7,14 @@
        url('/font/ubuntu-condensed-v9-latin-regular.woff') format('woff'),
        url('/font/ubuntu-condensed-v9-latin-regular.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'LCARSGTJ3';
+  font-style: normal;
+  font-weight: 400;
+  src: local('LCARSGTJ3'), local('LCARSGTJ3'),
+       url('/font/LCARSGTJ3.woff') format('woff'),
+       url('/font/LCARSGTJ3.ttf') format('truetype');
+}
 
 /******************************
  * tiny layout
@@ -41,6 +49,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'LCARSGTJ3';
   font-size: 1em;
   font-weight: normal;
 }
@@ -150,7 +159,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__link {
   text-decoration: none;
   color: #f90;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'LCARSGTJ3', 'sans-serif';
 }
 
 /* navigation */
@@ -160,7 +169,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 1fr;
   grid-gap: .5em;
   list-style-type: none;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'LCARSGTJ3', monospace;
 }
 
 .nav__link {
@@ -233,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
 #main__container h3,
 #main__container h4 {
   color: #f90;
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'LCARSGTJ3', sans-serif;
   margin: .1em 0 .3em;
 }
 
