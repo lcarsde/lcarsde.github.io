@@ -1,12 +1,4 @@
-/* ubuntu-condensed-regular - latin */
-@font-face {
-  font-family: 'Ubuntu Condensed';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'),
-       url('/font/ubuntu-condensed-v9-latin-regular.woff') format('woff'),
-       url('/font/ubuntu-condensed-v9-latin-regular.ttf') format('truetype');
-}
+/* LCARS GTJ 3 */
 @font-face {
   font-family: 'LCARSGTJ3';
   font-style: normal;
@@ -46,12 +38,14 @@ body {
   padding: .5em;
 
   --side-bar-width: 5em;
+  --LCARS-spacing: 0.015em;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'LCARSGTJ3';
   font-size: 1em;
   font-weight: normal;
+  letter-spacing: var(--LCARS-spacing);
 }
 
 #header {
@@ -147,13 +141,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .header__name--short {
   text-transform: uppercase;
-  font-weight: bold;
 }
 
 .header__name--long {
   display: none;
   text-transform: uppercase;
-  font-weight: bold;
 }
 
 .header__link {
@@ -180,11 +172,12 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 48px;
   height: 2.3em;
   font-size: 1.25em;
+  letter-spacing: var(--LCARS-spacing);
   background-color: #f96;
   border-radius: 2.3em;
   color: #000;
   text-decoration: none;
-  padding: .3em 1.1em;
+  padding: .2em 1.2em;
 }
 
 .nav__link:focus,
@@ -248,17 +241,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #main__container h1 {
   font-size: 2.2em;
-  font-weight: 600;
 }
 
 #main__container h2 {
   font-size: 1.8em;
-  font-weight: 600;
 }
 
 #main__container h3 {
   font-size: 1.5em;
-  font-weight: 500;
 }
 
 #main__container p {
@@ -457,7 +447,7 @@ strong {
     justify-content: flex-end;
     border-radius: 0;
     background-color: #99f;
-    padding-right: .5em;
+    padding-right: .4em;
   }
 
   .nav__link::before {
@@ -467,14 +457,14 @@ strong {
     align-items: center;
     position: absolute;
     font-size: 2.8em;
-    font-weight: 500;
     color: #c69;
     background-color: none;
     height: 100%;
+    width: 1em;
     min-height: 48px;
     left: 100%;
     top: 0;
-    padding: 0 2% 1%;
+    padding: 0 2%;
   }
 
   .nav__link::after {

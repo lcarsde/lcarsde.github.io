@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lcarsde-github-io-1',
+const CACHE_NAME = 'lcarsde-github-io-2',
   ALL_CACHES = [ // need any here for includes
     CACHE_NAME
   ];
@@ -12,10 +12,11 @@ self.addEventListener('install', (event) => {
           'installation.html',
           'manual.html',
           'about.html',
+          'links.html',
           'style.css',
           'images/icon-192.png',
-          'font/ubuntu-condensed-v9-latin-regular.ttf',
-          'font/ubuntu-condensed-v9-latin-regular.woff',
+          'font/LCARSGTJ3.ttf',
+          'font/LCARSGTJ3.woff',
         ]);
       })
   );
