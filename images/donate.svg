@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 90 30"
+    width="120" height="40"
+    xmlns="http://www.w3.org/2000/svg"
+    version="1.1">
+
+<rect height="30px" width="90px" x="0" y="0" stroke-width="0" fill="#f96" rx="15px" ry="15px"/>
+
+<text x="75px" y="26px" stroke-width="0" fill="#000" text-anchor="end" font-size="20px" font-family="'LCARSGTJ3', sans-serif">Donate</text>
+
+</svg>
