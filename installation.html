@@ -43,10 +43,19 @@
     </p>
     <p><b class="note">Note</b>: lcarswm uses the Kotlin compiler to build, which uses the clang compiler. clang needs an outdated library, libtinfo.so.5. There is usually some compatibility libraries to get it like ncurses5-compat-libs in Arch Linux's AUR. From checking the internet, it seems the most popular (and also working) solution to link to the new version libtinfo.so.6, which can be done like this: <strong>sudo ln -s /usr/lib/libtinfo.so.6 /usr/lib/libtinfo.so.5</strong></p>
     <section>
-      <h2>From repository</h2>
+      <h2>Distros</h2>
       <h3>Arch Linux</h3>
       <p>The lcarsde parts are available via the AUR. They can be found via the keyword lcarsde, but currently there is no group installation for them, so they need to be installed separately.</p>
       <p><a href="https://aur.archlinux.org/packages/?K=lcarsde" target="_blank" rel="noopener noreferrer nofollow">This link will bring you to the packages in the AUR website.</a></p>
+      <h3>Ubuntu</h3>
+      <p>DEB packages for Ubuntu are available for all parts of lcarsde. The latest versions can be downloaded using the following links and installed with the software installer.</p>
+      <ul>
+        <li><a href="https://github.com/lcarsde/lcarswm/releases/download/21.3/lcarswm_21.3_amd64.deb">lcarswm (21.3)</a></li>
+        <li><a href="https://github.com/lcarsde/menu/releases/download/20.1/lcarsde-app-menu_20.1_amd64.deb">application menu (20.1)</a></li>
+        <li><a href="https://github.com/lcarsde/status-bar/releases/download/21.3/status-bar_21.3_amd64.deb">status bar (21.3)</a></li>
+        <li><a href="https://github.com/lcarsde/application-starter/releases/download/21.1/lcarsde-application-starter_21.1_amd64.deb">application starter (21.1)</a></li>
+        <li><a href="https://github.com/lcarsde/logout/releases/download/20.1/lcarsde-logout_20.1_amd64.deb">logout (20.1)</a></li>
+      </ul>
       <h2>From source</h2>
       <p>The manual installation requires only a few steps to get started. First download the latest releases of the following repositories:</p>
       <ul>
