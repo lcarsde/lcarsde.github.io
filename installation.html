@@ -40,7 +40,7 @@
   <main id="main__container">
     <h1>Installation</h1>
     <p><b class="note">Note</b>: lcarsde does not bring its own display manager. If one is required (e.g. a login screen is needed but not yet there) than install a display manager like GDM or SDDM additionally to lcarsde. With a display manager, lcarsde will be available in the window manager menu on the login screen.</p>
-    <p><b class="note">Note</b>: lcarswm uses the Kotlin compiler to build, which uses the clang compiler. clang needs an outdated library, libtinfo.so.5. There is usually some compatibility libraries to get it like ncurses5-compat-libs in Arch Linux's AUR. From checking the internet, it seems the most popular (and also working) solution to link to the new version libtinfo.so.6, which can be done like this: <strong>sudo ln -s /usr/lib/libtinfo.so.6 /usr/lib/libtinfo.so.5</strong></p>
+    <p><b class="note">Note</b>: lcarswm uses the Kotlin compiler to build, which uses the clang compiler. The used clang version needs an outdated library, libtinfo.so.5. There is usually some compatibility library to get it, like ncurses5-compat-libs in Arch Linux's AUR. From checking the internet, it seems the most popular (and also working) solution is to link to the new version libtinfo.so.6, which can be done like this: <strong>sudo ln -s /usr/lib/libtinfo.so.6 /usr/lib/libtinfo.so.5</strong></p>
     <section>
       <h2>Distros</h2>
       <h3>Arch Linux</h3>
