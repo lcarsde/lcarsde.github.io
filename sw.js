@@ -40,14 +40,16 @@ self.addEventListener('fetch', (event) => {
   const networkFetch = fetch(event.request);
   const requestUrl = new URL(event.request.url);
 
-  event.waitUntil(
-    networkFetch.then(response => {
-      const responseClone = response.clone();
-      const request = requestUrl.origin === location.origin && requestUrl.pathname === '/' ? 'index.html' : event.request;
-      caches.open(CACHE_NAME)
-        .then(cache => cache.put(request, responseClone));
-    })
-  )
+  if (requestUrl.origin === location.origin) {
+    event.waitUntil(
+      networkFetch.then(response => {
+        const responseClone = response.clone();
+        const request = requestUrl.pathname === '/' ? 'index.html' : event.request;
+        caches.open(CACHE_NAME)
+          .then(cache => cache.put(request, responseClone));
+      })
+    );
+  }
 
   event.respondWith(
     caches.match(event.request)
