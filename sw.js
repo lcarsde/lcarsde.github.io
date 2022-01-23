@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lcarsde-github-io-2',
+const CACHE_NAME = 'lcarsde-github-io-3',
   ALL_CACHES = [ // need any here for includes
     CACHE_NAME
   ];
