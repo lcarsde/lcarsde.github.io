@@ -75,7 +75,7 @@
           fetches.forEach(item => {
             const versionItem = document.createElement('li');
             console.log(item);
-            versionItem.textContent = item.name + ': ' + item.release.name;
+            versionItem.textContent = item.name + ': ' + item.release.tag_name;
             versionList.appendChild(versionItem);
           });
           versionSection.appendChild(versionList);
