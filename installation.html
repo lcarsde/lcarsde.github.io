@@ -48,13 +48,31 @@
       <p><a href="https://aur.archlinux.org/packages/?K=lcarsde" target="_blank" rel="noopener noreferrer nofollow">This link will bring you to the packages in the AUR website.</a></p>
       <h3>Ubuntu</h3>
       <p>DEB packages for Ubuntu are available for all parts of lcarsde. The latest versions can be downloaded using the following links and installed with the software installer.</p>
-      <ul>
-        <li><a href="https://github.com/lcarsde/lcarswm/releases/download/21.3/lcarswm_21.3_amd64.deb">lcarswm (21.3)</a></li>
-        <li><a href="https://github.com/lcarsde/menu/releases/download/21.1/lcarsde-app-menu_21.1_amd64.deb">application menu (21.1)</a></li>
-        <li><a href="https://github.com/lcarsde/status-bar/releases/download/21.3/status-bar_21.3_amd64.deb">status bar (21.3)</a></li>
-        <li><a href="https://github.com/lcarsde/application-starter/releases/download/21.1/lcarsde-application-starter_21.1_amd64.deb">application starter (21.1)</a></li>
-        <li><a href="https://github.com/lcarsde/logout/releases/download/20.1/lcarsde-logout_20.1_amd64.deb">logout (20.1)</a></li>
+      <ul id="deb-list">
       </ul>
+      <script>
+        fetch('https://api.github.com/orgs/lcarsde/repos')
+          .then(resp => resp.json())
+          .then(data => Promise.all(data
+              .filter(repo => repo.topics.indexOf('documentation') === -1)
+              .sort((a,b) => a.name.localeCompare(b.name))
+              .map(repo => fetch(repo.releases_url.slice(0, -5))
+                .then(resp => resp.json())
+                .then(releases => ({name: repo.name, release: releases[0]})))
+          ))
+          .then(fetches => {
+            fetches.forEach(item => {
+              const debItem = document.createElement('li');
+              const debLink = document.createElement('a');
+              console.log(item);
+              debLink.textContent = `${item.name} (${item.release.tag_name})`;
+              debLink.href = item.release.assets[0].browser_download_url;
+              debItem.appendChild(debLink);
+              document.getElementById('deb-list').appendChild(debItem);
+            });
+        });
+      </script>
+        <noscript><p>I need JavaScript to find the package links for you. But you can also find them via the release links in the section "From source".</p></noscript>
       <h2>From source</h2>
       <p>The manual installation requires only a few steps to get started. First download the latest releases of the following repositories:</p>
       <ul>

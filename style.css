@@ -4,8 +4,8 @@
   font-style: normal;
   font-weight: 400;
   src: local('LCARSGTJ3'), local('LCARSGTJ3'),
-       url('/font/LCARSGTJ3.woff') format('woff'),
-       url('/font/LCARSGTJ3.ttf') format('truetype');
+       url('font/LCARSGTJ3.woff') format('woff'),
+       url('font/LCARSGTJ3.ttf') format('truetype');
 }
 
 /******************************
