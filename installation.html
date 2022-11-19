@@ -58,15 +58,18 @@
               .sort((a,b) => a.name.localeCompare(b.name))
               .map(repo => fetch(repo.releases_url.slice(0, -5))
                 .then(resp => resp.json())
-                .then(releases => ({name: repo.name, release: releases[0]})))
+                .then(releases => ({name: repo.name, html_url: repo.html_url, release: releases[0]})))
           ))
           .then(fetches => {
             fetches.forEach(item => {
               const debItem = document.createElement('li');
               const debLink = document.createElement('a');
               console.log(item);
-              debLink.textContent = `${item.name} (${item.release.tag_name})`;
-              debLink.href = item.release.assets[0].browser_download_url;
+              debLink.textContent = `${item.name} (${item.release?.tag_name ?? '-'})`;
+
+              debLink.href = item.release
+                ? item.release.assets[0].browser_download_url
+                : item.html_url;
               debItem.appendChild(debLink);
               document.getElementById('deb-list').appendChild(debItem);
             });
@@ -81,6 +84,7 @@
         <li>status-bar: <a href="https://github.com/lcarsde/status-bar/releases" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/status-bar/releases</a></li>
         <li>application-starter: <a href="https://github.com/lcarsde/application-starter/releases" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/application-starter/releases</a></li>
         <li>logout: <a href="https://github.com/lcarsde/logout/releases" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/logout/releases</a></li>
+        <li>lcarsde-onboard-theme: <a href="https://github.com/lcarsde/lcarsde-onboard-theme" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/lcarsde-onboard-theme</a></li>
       </ul>
       <p>Secondly, unpack the release packages.</p>
       <p>Thirdly and finally, execute the install.sh script of each program.</p>
