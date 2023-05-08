@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lcarsde-github-io-4',
+const CACHE_NAME = 'lcarsde-github-io-5',
   ALL_CACHES = [ // need any here for includes
     CACHE_NAME
   ];
@@ -44,6 +44,9 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     networkFetch.then(response => {
+      if (response.status > 399) {
+        throw Error("whoops")
+      }
       caches.open(CACHE_NAME)
         .then(cache => cache.put(request, response.clone()));
       return response
