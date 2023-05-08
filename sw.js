@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lcarsde-github-io-5',
+const CACHE_NAME = 'lcarsde-github-io-6',
   ALL_CACHES = [ // need any here for includes
     CACHE_NAME
   ];
@@ -40,18 +40,20 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const networkFetch = fetch(event.request);
   const requestUrl = new URL(event.request.url);
-  const request = requestUrl.pathname === '/' ? 'index.html' : event.request;
+
+  if (requestUrl.origin === location.origin) {
+    event.waitUntil(
+      networkFetch.then(response => {
+        const responseClone = response.clone();
+        const request = requestUrl.pathname === '/' ? 'index.html' : event.request;
+        caches.open(CACHE_NAME)
+          .then(cache => cache.put(request, responseClone));
+      })
+    );
+  }
 
   event.respondWith(
-    networkFetch.then(response => {
-      if (response.status > 399) {
-        throw Error("whoops")
-      }
-      caches.open(CACHE_NAME)
-        .then(cache => cache.put(request, response.clone()));
-      return response
-    })
-      .catch(() => caches.match(event.request))
-      .then((response) => response ?? caches.match('whoops.html'))
+    caches.match(event.request)
+      .then((response) => response ?? networkFetch)
   );
 });
