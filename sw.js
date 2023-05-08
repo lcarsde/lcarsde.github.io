@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lcarsde-github-io-3',
+const CACHE_NAME = 'lcarsde-github-io-4',
   ALL_CACHES = [ // need any here for includes
     CACHE_NAME
   ];
@@ -13,6 +13,7 @@ self.addEventListener('install', (event) => {
           'manual.html',
           'about.html',
           'links.html',
+          'whoops.html',
           'style.css',
           'images/icon-192.png',
           'font/LCARSGTJ3.ttf',
@@ -39,20 +40,15 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const networkFetch = fetch(event.request);
   const requestUrl = new URL(event.request.url);
-
-  if (requestUrl.origin === location.origin) {
-    event.waitUntil(
-      networkFetch.then(response => {
-        const responseClone = response.clone();
-        const request = requestUrl.pathname === '/' ? 'index.html' : event.request;
-        caches.open(CACHE_NAME)
-          .then(cache => cache.put(request, responseClone));
-      })
-    );
-  }
+  const request = requestUrl.pathname === '/' ? 'index.html' : event.request;
 
   event.respondWith(
-    caches.match(event.request)
-      .then((response) => response || networkFetch)
+    networkFetch.then(response => {
+      caches.open(CACHE_NAME)
+        .then(cache => cache.put(request, response.clone()));
+      return response
+    })
+      .catch(() => caches.match(event.request))
+      .then((response) => response ?? caches.match('whoops.html'))
   );
 });
