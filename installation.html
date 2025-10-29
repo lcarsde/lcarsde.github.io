@@ -41,11 +41,9 @@
   <main id="main__container">
     <h1>Installation</h1>
     <p><b class="note">Note</b>: lcarsde does not bring its own display manager. If one is required (e.g., a login screen is needed but not yet there), then install a display manager like GDM or SDDM additionally to lcarsde. With a display manager, lcarsde will be available <em>in the window manager menu on the login screen</em>.</p>
+    <p><strong>Attention</strong>: If from the 23.* versions to 25.* version, the distribution changes! The applications are not installed via individual packages but through one package. Additionally, the audio widget of the status bar is configured differently. Therefore, you need to check the lcarsde related files in <em>/etc/lcarsde</em> and <em>/etc/xdg/autostart</em>. Replace the old files with the new ones, removing <em>.dpkg-new</em> from the file name and moving your old settings over if you adjusted anything. Remember to adjust also local configurations in <em>~/.config/lcarsde</em> if you have that. You'll probably have to adjust the filenames in a fresh installation as well.</p>
     <section>
       <h2>Distros</h2>
-      <h3>Arch Linux</h3>
-      <p>The lcarsde parts are available via the AUR. They can be found via the keyword lcarsde, but currently there is no group installation for them, so they need to be installed separately.</p>
-      <p><a href="https://aur.archlinux.org/packages/?K=lcarsde" target="_blank" rel="noopener noreferrer nofollow">This link will bring you to the packages in the AUR website.</a></p>
       <h3>Ubuntu (22.04)</h3>
       <p>DEB packages for Ubuntu are available for all parts of lcarsde. The latest versions can be downloaded using the following links and installed with the software installer.</p>
       <ul id="deb-list">
@@ -54,7 +52,7 @@
         fetch('https://api.github.com/orgs/lcarsde/repos')
           .then(resp => resp.json())
           .then(data => Promise.all(data
-              .filter(repo => repo.topics.indexOf('documentation') === -1)
+              .filter(repo => repo.topics.indexOf('documentation') === -1 && repo.topics.indexOf('deprecated') === -1)
               .sort((a,b) => a.name.localeCompare(b.name))
               .map(repo => fetch(repo.releases_url.slice(0, -5))
                 .then(resp => resp.json())
@@ -75,19 +73,15 @@
             });
         });
       </script>
-        <noscript><p>I need JavaScript to find the package links for you. But you can also find them via the release links in the section "From source".</p></noscript>
+        <noscript><p>I need JavaScript to find the package links for you. But you can also find them via the release links in the section "From source". Download the *.deb file of the latest releases from there.</p></noscript>
       <h2>From source</h2>
       <p>The manual installation requires only a few steps to get started. First, download the latest releases of the following repositories:</p>
       <ul>
-        <li>lcarswm: <a href="https://github.com/lcarsde/lcarswm/releases" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/lcarswm/releases</a></li>
-        <li>menu: <a href="https://github.com/lcarsde/menu/releases" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/menu/releases</a></li>
-        <li>status-bar: <a href="https://github.com/lcarsde/status-bar/releases" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/status-bar/releases</a></li>
-        <li>application-starter: <a href="https://github.com/lcarsde/application-starter/releases" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/application-starter/releases</a></li>
-        <li>logout: <a href="https://github.com/lcarsde/logout/releases" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/logout/releases</a></li>
-        <li>lcarsde-onboard-theme: <a href="https://github.com/lcarsde/lcarsde-onboard-theme" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/lcarsde-onboard-theme</a></li>
+        <li>lcarsde: <a href="https://github.com/lcarsde/lcarsde/releases" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/lcarsde/releases</a></li>
+        <li>lcarsde-onboard-theme (optional): <a href="https://github.com/lcarsde/lcarsde-onboard-theme" target="_blank" rel="noopener noreferrer nofollow">https://github.com/lcarsde/lcarsde-onboard-theme</a></li>
       </ul>
       <p>Secondly, unpack the release packages.</p>
-      <p>Thirdly and finally, execute the install.sh script of each program.</p>
+      <p>Thirdly and finally, execute the install.sh script of lcarsde. For the onboard theme, follow the installation instructions in the README.md</p>
       <p><b class="note">Note</b>: at the beginning of each installation, the dependencies are printed in the console. Please make sure those dependencies are installed as well.</p>
     </section>
   </main>

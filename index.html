@@ -64,7 +64,7 @@
       fetch('https://api.github.com/orgs/lcarsde/repos')
         .then(resp => resp.json())
         .then(data => Promise.all(data
-            .filter(repo => repo.topics.indexOf('documentation') === -1)
+            .filter(repo => repo.topics.indexOf('documentation') === -1 && repo.topics.indexOf('deprecated') === -1)
             .sort((a,b) => a.name.localeCompare(b.name))
             .map(repo => fetch(repo.releases_url.slice(0, -5))
               .then(resp => resp.json())
