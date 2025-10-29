@@ -261,6 +261,10 @@ code {
   font-size: 1.5em;
 }
 
+#main__container h4 {
+  font-size: 1.3em;
+}
+
 #main__container p {
   margin: 0 0 .7em;
   line-height: 1.4em;
@@ -494,7 +498,7 @@ dt:not(:first-child) {
     position: absolute;
     font-size: 3.2em;
     color: #c69;
-    background-color: none;
+    background-color: #000;
     height: 100%;
     width: .9em;
     min-height: 48px;

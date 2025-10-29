@@ -28,6 +28,7 @@
         <li class="nav__entry"><a class="nav__link active" data-num="12" href="manual.html">Manual</a></li>
         <li class="nav__entry"><a class="nav__link" data-num="58" href="links.html">Links</a></li>
         <li class="nav__entry"><a class="nav__link" data-num="39" href="about.html">About</a></li>
+        <li class="nav__entry"><a class="nav__link" data-num="45" href="data-privacy.html">Privacy Policy</a></li>
       </ul>
     </nav>
     <div class="nav__bar--bottom"></div>
@@ -52,8 +53,8 @@
     </section>
     <section id="lcarsde">
       <h2>Parts of the LCARS Desktop Environment</h2>
-      <p>lcarsde consists of five parts. The core is the window manager lcarswm. It handles the windows and draws the main frame. On the left lower big bar is the application menu that lists open windows and allows to focus and close them. On the top area is the status bar that shows system information and provides a few adjustable buttons. Additionally, there is a program selection for listing and running installed software as well as a logout application that allows to shutdown, restart, or logout. These two applications will show up in the main area when they are selected.</p>
-      <p>The following picture shows an overview of the primary screen with the colorful status bar on the top, the program menu on the left and a browser window in the main area.</p>
+      <p>lcarsde consists of five parts. The core is the window manager lcarswm. It handles the windows and draws the main frame. On the left lower big bar is the application menu that lists open windows and allows to focus and close them. In the top area is the status bar that shows system information and provides a few adjustable buttons. Additionally, there is a program selection for listing and running installed software as well as a logout application that allows to shutdown, restart, or logout. These two applications will show up in the main area when they are selected.</p>
+      <p>The following picture shows an overview of the primary screen with the colorful status bar on the top, the program menu on the left, and a browser window in the main area.</p>
       <img src="images/lcarsde-overview.png" alt="Overview screenshot of lcarsde">
       <p><a href="#index">Back to index</a></p>
     </section>
@@ -61,7 +62,7 @@
       <h2>LCARS Window Manager</h2>
       <p>The window manager lcarswm takes care of managing the windows. That is, it manages the windows showing and hiding and drawing its frame with the title bar below the window. It also handles actions to move windows from screen to screen and changing their size in the different screen modes. It also draws the basic frame, which is shown without any windows in the following image.</p>
       <img src="images/lcarswm.png" alt="Screenshot of lcarswm">
-      <p>What are the basic things, that can be done with the window manager? There are some default key bindings as well as a configuration that can be adjusted to your needs. First, these are the default key bindings:</p>
+      <p>What are the basic things that can be done with the window manager? There are some default key bindings as well as a configuration that can be adjusted to your needs. First, these are the default key bindings:</p>
       <ul>
         <li>Win+Q: close the window manager</li>
         <li>Win+M: toggle display mode between normal, maximized and fullscreen</li>
@@ -69,25 +70,25 @@
         <li>Alt+Win+Up/Down: move the focused window to another monitor</li>
         <li>Alt+F4: close the focused window</li>
       </ul>
-      <p>Windows can also be moved to other monitors by clicking, holding and dragging the titlebar of a window. The titlebar is below the window.</p>
+      <p>Windows can also be moved to other monitors by clicking, holding, and dragging the titlebar of a window. The titlebar is below the window.</p>
       <p>There are a few more key bindings that will open programs, but those are probably what needs to be adjusted, which brings us to configuration files. There is one configuration file for lcarswm located in <i>/etc/lcarsde</i>: <i>settings.xml</i>. Don't edit the files in this directory! Instead, if they need adjustment, copy them to <i>~/.config/lcarsde</i> and adjust them there.</p>
-      <p><dfn>settings.xml</dfn> contains key bindings for window manager actions and command executions. Especially the executions may be something to change and/or extend. Check the file for examples. Possible modifier keys are: <i>Shift</i>, <i>Ctrl</i>, <i>Alt</i>, <i>Win/Lin/Super</i>, <i>Meta</i>, <i>Hyper</i>. Below the key bindings, there are some general settings, which are the title, that is shown in the top frame part and the font that is used by the window manager. It is possible to set a title image, which overrides the title. The image has to be an xpm file with a height of 40 pixels and its width should be smaller then the space for the top blue bar.</p>
-      <p>lcarswm will also autostart any applications that are defined in <i>*.desktop</i> files that are in <i>/etc/xdg/autostart/</i> or <i>~/.config/autostart/</i>. The autostart of lcarswm follows the <a href="https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html" target="_blank" rel="nofollow noopener noreferrer">Desktop Autostart Specification</a>. You can use <code>OnlyShowIn</code> and <code>NotShowIn</code> to specify, which window manager should load which applications. You can copy the file from <i>/etc/xdg/autostart</i> to <i>~/.config/autostart</i> and adjust the lines in there. The file in your home folder will override the global one in <i>/etc</i>. For instance you can add <code>NotShowIn=lcarsde</code>. Multiple wm entries are separated by comma.</p>
+      <p><dfn>settings.xml</dfn> contains key bindings for window manager actions and command executions. Especially the executions may be something to change and/or extend. Check the file for examples. Possible modifier keys are: <i>Shift</i>, <i>Ctrl</i>, <i>Alt</i>, <i>Win/Lin/Super</i>, <i>Meta</i>, <i>Hyper</i>. Below the key bindings, there are some general settings, which are the title that is shown in the top frame part and the font that is used by the window manager. It is possible to set a title image, which overrides the title. The image has to be an xpm file with a height of 40 pixels and its width should be smaller than the space for the top blue bar.</p>
+      <p>lcarswm will also autostart any applications that are defined in <i>*.desktop</i> files that are in <i>/etc/xdg/autostart/</i> or <i>~/.config/autostart/</i>. The autostart of lcarswm follows the <a href="https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html" target="_blank" rel="nofollow noopener noreferrer">Desktop Autostart Specification</a>. You can use <code>OnlyShowIn</code> and <code>NotShowIn</code> to specify, which window manager should load which applications. You can copy the file from <i>/etc/xdg/autostart</i> to <i>~/.config/autostart</i> and adjust the lines in there. The file in your home folder will override the global one in <i>/etc</i>. For instance, you can add <code>NotShowIn=lcarsde</code>. Multiple wm entries are separated by comma.</p>
       <p><a href="#index">Back to index</a></p>
     </section>
     <section id="app_menu">
       <h2>Application Menu</h2>
-      <p>The application menu lists all open windows and allows to focus or close them. The menu is shown in the following image.</p>
+      <p>The application menu lists all open windows and allows focusing or closing them. The menu is shown in the following image.</p>
       <img src="images/app-menu.png" alt="Screenshot of the application menu">
-      <p>A window can be focused by clicking in the blue square with the program name. If the square is orange, then the window is currently focused. Clicking on the red, half-rounded area to the right of each square will close the corresponding window.</p>
+      <p>A window can be focused by clicking on the blue square with the program name. If the square is orange, then the window is currently focused. Clicking on the red, half-rounded area to the right of each square will close the corresponding window.</p>
       <p><a href="#index">Back to index</a></p>
     </section>
     <section id="status_bar">
       <h2>Status Bar</h2>
-      <p>The status bar shows some system information like CPU usage and connectivity status and offers some buttons to perform actions like open a program or adjusting the sound. The status bar is shown in the following image.</p>
+      <p>The status bar shows some system information like CPU usage and connectivity status and offers some buttons to perform actions like opening a program or adjusting the sound. The status bar is shown in the following image.</p>
       <img src="images/status-bar.png" alt="Screenshot of the status bar">
-      <p>The widgets, that are shown in the status bar can be configured. The fields with numbers on the left side are randomly generated to fill the otherwise empty space. <dfn>status-config.xml</dfn> is the default configuration and located in <i>/etc/lcarsde</i>. To adjust the settings for a user copy it to <i>~/.config/lcarsde</i> and modify it there.</p>
-      <p>Every widget has a position setting. The position setting contains an x and y coordinate and its width and height, each in cells of the status bar grid. The status bar grid is always three cells high. The amount of vertical cells depends on the screen resolution. The x and y coordinates start at 0. The counting of x coordinates goes right to left (for design reasons). The counting of y coordinates goes from top to bottom. So, x=0, y=0 is in the top right corner of the status bar and x=4, y=2 is at the bottom of the status bar and 3 cells away from its right border.</p>
+      <p>The widgets that are shown in the status bar can be configured. The fields with numbers on the left side are randomly generated to fill the otherwise empty space. <dfn>status-config.xml</dfn> is the default configuration and located in <i>/etc/lcarsde</i>. To adjust the settings for a user, copy it to <i>~/.config/lcarsde</i> and modify it there.</p>
+      <p>Every widget has a position setting. The position setting contains an x and y coordinate and its width and height, each in cells of the status bar grid. The status bar grid is always three cells high. The number of vertical cells depends on the screen resolution. The x and y coordinates start at 0. The counting of x coordinates goes right to left (for design reasons). The counting of y coordinates goes from top to bottom. So, x=0, y=0 is in the top right corner of the status bar and x=4, y=2 is at the bottom of the status bar and 3 cells away from its right border.</p>
       <p>The current available widgets with their special settings are:</p>
       <dl>
         <dt>LcarsdeStatusTime</dt><dd>Shows the current time.</dd>
@@ -97,7 +98,7 @@
         <dt>LcarsdeStatusCpuUsage</dt><dd>Shows a graph with the current usages of the different CPU cores.</dd>
         <dt>LcarsdeStatusAudio</dt><dd>Shows the volume level and provides buttons for basic audio actions.<br>Its property <code>getData</code> needs to be an executable or script that provides the audio status. It needs to print <code>volume;muted</code> where volume is a percentage from 0% to 100% and muted is yes or 1 for muted and no or 0 for unmuted. An example of the output would be <em>50%;no</em>.<br>Its property <code>toggleMute</code> needs to be a command that toggles the mute status.<br>Its property <code>raiseVolume</code> needs to be a command that raises the volume.<br>Its property <code>lowerVolume</code> needs to be a command that lowers the volume.</dd>
         <dt>LcarsdeBatteryStatus</dt><dd>Shows the computers battery status.<br>Its property <code>device</code> needs to be the name of a folder in the directory <i>/sys/class/power_supply</i>, for instance <em>BAT0</em>.</dd>
-        <dt>LcarsdeWifiStatus</dt><dd>Shows the status of a wifi connector.<br>Its property <code>device</code> needs to be the name of a folder in the directory <i>/sys/class/net</i>. The folder name should start with <em>w</em> to indicate a wifi device, like wlp1s0.</dd>
+        <dt>LcarsdeWifiStatus</dt><dd>Shows the status of a Wi-Fi connector.<br>Its property <code>device</code> needs to be the name of a folder in the directory <i>/sys/class/net</i>. The folder name should start with <em>w</em> to indicate a Wi-Fi device, like wlp1s0.</dd>
         <dt>LcarsdeEthStatus</dt><dd>Shows the status of an ethernet connector.<br>Its property <code>device</code> needs to be the name of a folder in the directory <i>/sys/class/net</i>. The folder name should start with <em>e</em> to indicate an ethernet device, like enp0s2.</dd>
         <dt>LcarsdeStatusButton</dt><dd>Button for executing a command/running a program.<br>Its property <code>text</code> defines the text of the button.<br>Its property <code>command</code> needs to be the command to run.<br>Its property <code>color</code> defines the button color as hex color code.</dd>
         <dt>LcarsdeStatusMemory</dt><dd>Shows the current memory usage.</dd>
@@ -107,13 +108,13 @@
     </section>
     <section id="application_selection">
       <h2>Application Selection</h2>
-      <p>The application selection lists all installed programs (with a desktop file) in their categories and allows to run them by clicking on the programs button. In the default status bar configuration, this application is available via the button that is labeled "programs". The following image shows the program selection.</p>
+      <p>The application selection lists all installed programs (with a desktop file) in their categories and allows to run them by clicking on the programs button. In the default status bar configuration, this application is available via the button labeled "programs". The following image shows the program selection.</p>
       <img src="images/app-selector.png" alt="Screenshot of the program selection">
       <p><a href="#index">Back to index</a></p>
     </section>
     <section id="logout_app">
       <h2>Logout Application</h2>
-      <p>The logout application offers buttons for logout, shutdown, restart, ... . In the default status bar configuration, this application is available via the button that is labeled "close". The following image shows the logout application.</p>
+      <p>The logout application offers buttons for logout, shutdown, restart, ... . In the default status bar configuration, this application is available via the button labeled "close". The following image shows the logout application.</p>
       <img src="images/logout.png" alt="Screenshot of the logout application">
       <p><a href="#index">Back to index</a></p>
     </section>
