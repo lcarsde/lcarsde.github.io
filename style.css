@@ -342,6 +342,39 @@ dt:not(:first-child) {
   margin-top: .5em;
 }
 
+.warning {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  color: #fff;
+}
+
+.warning h2 {
+  color: #fff !important;
+  height: 100%;
+}
+
+.warning > header {
+  display: grid;
+  grid-template-rows: 1.5em;
+  grid-template-columns: 1.2em auto 1fr 1.2em;
+  grid-gap: .5rem;
+  align-items: center;
+}
+
+.warning > footer {
+  display: grid;
+  grid-template-rows: 1.5em;
+  grid-template-columns: 1.2em 1fr 1.2em;
+  grid-gap: .5rem;
+  align-items: center;
+}
+
+.warning :is(.bar--left, .bar--right, .bar--space) {
+  height: 100%;
+  background-color: #cc6666;
+}
+
 /******************************
  * small layout
  ******************************/
@@ -412,6 +445,10 @@ dt:not(:first-child) {
 
   .bar--left {
     display: none;
+  }
+
+  .warning .bar--left {
+    display: block !important;
   }
 
   /* header */

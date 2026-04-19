@@ -29,6 +29,7 @@
         <li class="nav__entry"><a class="nav__link" data-num="58" href="links.html">Links</a></li>
         <li class="nav__entry"><a class="nav__link" data-num="39" href="about.html">About</a></li>
         <li class="nav__entry"><a class="nav__link" data-num="45" href="data-privacy.html">Privacy Policy</a></li>
+        <li class="nav__entry"><a class="nav__link" data-num="83" href="accessibility.html">Accessibility Statement</a></li>
       </ul>
     </nav>
     <div class="nav__bar--bottom"></div>
@@ -39,6 +40,18 @@
     <div class="bar--right bar__main-nav--right"></div>
   </div>
   <main id="main__container">
+    <section class="warning">
+      <header>
+        <div class="bar--left"></div><h2>Prio 1 Message</h2><div class="bar--space"></div><div class="bar--right"></div>
+      </header>
+      <p>Hello fellow crew member. This is to inform you that I have resigned from my post as LCARSDE developer. Other persons and things in my life require priority. Therefore, I'm no longer able to continue this project. It was fun while it lasted and I certainly learned a lot. <strong>For now, this project is no longer maintained.</strong> Sorry to all the people, who where looking for support lately to whom I was unable to answer.</p>
+      <p>In case you'd like to take over, I'd be happy to give you a quick project tour.</p>
+      <p>I wish you all the best!</p>
+      <p>Andreas</p>
+      <footer>
+        <div class="bar--left"></div><div class="bar--space"></div><div class="bar--right"></div>
+      </footer>
+    </section>
     <h1>Installation</h1>
     <p><b class="note">Note</b>: lcarsde does not bring its own display manager. If one is required (e.g., a login screen is needed but not yet there), then install a display manager like GDM or SDDM additionally to lcarsde. With a display manager, lcarsde will be available <em>in the window manager menu on the login screen</em>.</p>
     <p><strong>Attention</strong>: If from the 23.* versions to 25.* version, the distribution changes! The applications are not installed via individual packages but through one package. Additionally, the audio widget of the status bar is configured differently. Therefore, you need to check the lcarsde related files in <em>/etc/lcarsde</em> and <em>/etc/xdg/autostart</em>. Replace the old files with the new ones, removing <em>.dpkg-new</em> from the file name and moving your old settings over if you adjusted anything. Remember to adjust also local configurations in <em>~/.config/lcarsde</em> if you have that. You'll probably have to adjust the filenames in a fresh installation as well.</p>
